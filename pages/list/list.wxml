@@ -1,0 +1,7 @@
+<view class="tips-item"wx:for="{{todayTips}}">
+  <view class="zs">
+    <text class="tips-tipt">{{item.tipt}}：</text>
+    <text class="tips-zs">{{item.zs}}</text>
+  </view>
+  <view class="tips-des">{{item.des}}</view>
+</view>

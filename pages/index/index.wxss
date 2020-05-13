@@ -1,0 +1,136 @@
+view {
+  box-sizing: border-box;
+}
+
+/*width 750rpx, height 760rpx
+760=174+280+56+250*/
+
+.weather-wrapper {
+  width: 100vw;
+  height: 760rpx;
+  /* background-color: darkorange; */
+  padding-top: 40rpx;
+  padding-bottom: 250rpx;
+}
+
+/*height 154rpx
+154=42+10+42+60*/
+.location-wrapper{
+  margin-bottom: 60rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.5)!important;
+  border: none!important;
+  padding: 0!important;
+}
+
+.location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-icon{
+  margin-right: 10rpx;
+  width: 21rpx;
+  height: 30rpx;
+}
+
+.location-tips{
+  margin-top:10rpx;
+  text-align: center;
+  height: 42rpx;
+}
+
+.temp {
+  height: 280rpx;
+  font-size: 200rpx;
+  line-height: 280rpx;    /* 设定行高为字号的1.4倍，确保文字视图的上下都有一定的空隙 */
+  text-align: center;
+  opacity: 0.8;
+}
+
+.weather {
+  height: 56rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  text-align: center;
+  opacity: 0.65;
+  margin-bottom: 160rpx;
+}
+
+.day-weather {
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  height: 80rpx;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.5)
+}
+
+.temp-text {
+  flex-grow: 1;
+  padding-right: 30rpx;
+  text-align: right;
+}
+
+.arrow-icon {
+  width: 13rpx;
+  height: 24rpx;
+}
+
+.timetips {
+  display: flex;
+  /* width: 100vw;
+  height: 42rpx; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.timetips-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.timetips-text {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5;
+}
+
+.forecast {
+  margin-left: 14rpx;
+  display: flex;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 180rpx;
+}
+
+.forecast-time {
+  font-size: 36rpx;
+  line-height: 42rpx;
+}
+
+.forecast-weather {
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  font-size: 36rpx;
+  line-height: 42rpx;
+}
+
+.forecast-temp {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.5)
+}

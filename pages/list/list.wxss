@@ -1,0 +1,40 @@
+.tips-item {
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 40rpx;
+  border-bottom: 8rpx solid rgba(255, 255, 255, 0.1);
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+}
+
+.tips-item:last-child {
+  border-bottom: none;
+}
+ 
+.tips-tipt {
+  /* opacity: 0.5; */
+  color: #00d4f0;
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
+
+.tips-zs {
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  font-weight: bold;
+}
+
+.tips-des {
+  color:rgba(255,255,255,0.8);
+  margin-top: 10rpx;
+  /* opacity: 0.8; */
+  font-size: 36rpx;
+  line-height: 42rpx;
+}
+
+page {
+  /* background: linear-gradient(180deg, #00d2ff 0%, #3a47d5 100%); */
+  background: #161a42;
+}
