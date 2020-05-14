@@ -1,7 +1,9 @@
 const app = getApp();
 const bmap = require("../../libs/bmap-wx.min.js");
 const config = require("../../libs/config.js");
-const { ak } = config;
+const {
+  ak
+} = config;
 
 const weatherMap = {
   晴: "sunny",
@@ -35,18 +37,18 @@ Page({
     city: "广州市",
     locationAuthType: UNPROMPTED,
   },
-  onLoad: function () {
+  onLoad: function() {
     this.bmapsdk = new bmap.BMapWX({
       ak,
     });
     wx.getSetting({
       success: (res) => {
         const auth = res.authSetting["scope.userLocation"];
-        const locationAuthType = auth
-          ? AUTHORIZED
-          : auth === false
-          ? UNAUTHORIZED
-          : UNPROMPTED;
+        const locationAuthType = auth ?
+          AUTHORIZED :
+          auth === false ?
+          UNAUTHORIZED :
+          UNPROMPTED;
         this.setData({
           locationAuthType,
         });
@@ -54,7 +56,7 @@ Page({
       },
     });
   },
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.getCityAndWeather(() => wx.stopPullDownRefresh());
   },
   onTapLocation() {
@@ -67,7 +69,10 @@ Page({
           locationAuthType: AUTHORIZED,
         });
         this.bmapsdk.weather({
-          success: ({ originalData, currentWeather }) => {
+          success: ({
+            originalData,
+            currentWeather
+          }) => {
             this.setToday(currentWeather[0]);
             this.setFutureWeather(originalData.results[0]);
             app.globalData.todayTips = originalData.results[0].index;
@@ -83,8 +88,14 @@ Page({
     });
   },
   setToday(result) {
-    const { currentCity, date, temperature, weatherDesc } = result;
-    const tmpkey = weatherDesc.slice(0, 2); // slice(-2) 阴
+    const {
+      currentCity,
+      date,
+      temperature,
+      weatherDesc
+    } = result;
+    const tmpkey1 = weatherDesc.slice(0, 2);
+    const tmpkey2 = weatherDesc.slice(-2);
     // console.log(weatherMap[tmpkey])   // 截取的key 不存在呢？阵雨 中雨 小雪 大雪🧐
     this.setData({
       city: currentCity,
@@ -93,17 +104,20 @@ Page({
       todayDate: date.slice(0, 9),
       todayTemp: temperature.slice(0, -1) + "°",
       nowWeatherBackground: `/images/${
-        weatherMap[tmpkey] ? weatherMap[tmpkey] : "sunny"
+        weatherMap[tmpkey1] ? weatherMap[tmpkey1]
+          : (weatherMap[tmpkey1] === undefined) ? weatherMap[tmpkey2] : "cloudy"
       }-bg.png`,
     });
     wx.setNavigationBarColor({
       frontColor: "#000000",
-      backgroundColor:
-        weatherColorMap[weatherMap[tmpkey] ? weatherMap[tmpkey] : "sunny"],
+      backgroundColor: weatherColorMap[weatherMap[tmpkey1] ? eatherMap[tmpkey1] :
+        (weatherMap[tmpkey1] === undefined) ? weatherMap[tmpkey2] : "cloudy"],
     });
   },
   setFutureWeather(result) {
-    const { weather_data } = result;
+    const {
+      weather_data
+    } = result;
     const futureWeather = [];
     for (let i = 0; i < weather_data.length; i++) {
       futureWeather.push({
