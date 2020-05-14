@@ -72,7 +72,6 @@ Page({
             this.setFutureWeather(originalData.results[0]);
             app.globalData.todayTips = originalData.results[0].index;
           },
-          complete: () => callback & callback(),
         });
       },
       fail: () => {
@@ -80,6 +79,7 @@ Page({
           locationAuthType: UNAUTHORIZED,
         });
       },
+      complete: () => callback && callback(),
     });
   },
   setToday(result) {

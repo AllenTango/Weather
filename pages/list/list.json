@@ -2,5 +2,6 @@
   "usingComponents": {},
   "navigationBarBackgroundColor": "#161a42",
   "navigationBarTitleText": "今日小贴士",
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false
 }
