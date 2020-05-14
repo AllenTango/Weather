@@ -148,6 +148,10 @@ view {
   color:rgba(255,255,255,0.8);
 }
 
-page {
+.future {
   background: #161a42;
+  height: 46.25vh;
+  /* height: 47.5vh; isIphoneX */
+  /* margin-top: -5rpx; */
+  padding-top: 5rpx;
 }

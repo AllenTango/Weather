@@ -110,7 +110,7 @@ Page({
     });
     wx.setNavigationBarColor({
       frontColor: "#000000",
-      backgroundColor: weatherColorMap[weatherMap[tmpkey1] ? eatherMap[tmpkey1] :
+      backgroundColor: weatherColorMap[weatherMap[tmpkey1] ? weatherMap[tmpkey1] :
         (weatherMap[tmpkey1] === undefined) ? weatherMap[tmpkey2] : "cloudy"],
     });
   },
