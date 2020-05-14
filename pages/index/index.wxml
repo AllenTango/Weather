@@ -1,4 +1,4 @@
-<view class="weather-wrapper" style="background: #cbeefd url({{nowWeatherBackground}}); background-size: cover;">
+<view class="weather-wrapper">
   <button class="location-wrapper" open-type="{{ locationAuthType==1 ? 'openSetting' : ''}}" bindopensetting="onTapLocation" bindtap="onTapLocation" plain="true">
     <!-- <view class="location-wrapper"> -->
     <view class="location">
@@ -15,6 +15,7 @@
   </button>
   <view class="temp">{{ nowTemp }}</view>
   <view class="weather">{{ nowWeather }}</view>
+  <image class="weather-bg" src="{{nowWeatherBackground}}" mode="scaleToFill"></image>
   <view class="day-weather" bindtap="onTapDayWeather">
     <view class="day-text">{{todayDate}}</view>
     <view class="temp-text">{{todayTemp}}</view>
@@ -22,18 +23,20 @@
   </view>
 </view>
 
-<view class="timetips">
-  <image class="timetips-icon" src="/images/time-icon.png"></image>
-  <view class="timetips-text">未来3日天气预测</view>
-</view>
-
-<scroll-view scroll-x>
-  <view class="forecast">
-    <view class="forecast-item" wx:for="{{futureWeather}}" wx:key="index">
-      <view class="forecast-time">{{item.date}}</view>
-      <!-- <image class="forecast-weather" src="{{item.iconPath}}"></image> -->
-      <view class="forecast-weather">{{item.weather}}</view>
-      <view class="forecast-temp">{{item.temp}}</view>
-    </view>
+<view class="future">
+  <view class="timetips">
+    <image class="timetips-icon" src="/images/time-icon.png"></image>
+    <view class="timetips-text">未来3日天气预测</view>
   </view>
-</scroll-view>
+
+  <scroll-view scroll-x>
+    <view class="forecast">
+      <view class="forecast-item" wx:for="{{futureWeather}}" wx:key="index">
+        <view class="forecast-time">{{item.date}}</view>
+        <!-- <image class="forecast-weather" src="{{item.iconPath}}"></image> -->
+        <view class="forecast-weather">{{item.weather}}</view>
+        <view class="forecast-temp">{{item.temp}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

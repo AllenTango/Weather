@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+config.js
+.gitignore
+.gitattributes
+.DS_Store

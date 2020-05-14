@@ -8,7 +8,7 @@ view {
 .weather-wrapper {
   width: 100vw;
   height: 760rpx;
-  /* background-color: darkorange; */
+  position: relative;
   padding-top: 40rpx;
   padding-bottom: 250rpx;
 }
@@ -59,6 +59,15 @@ view {
   margin-bottom: 160rpx;
 }
 
+.weather-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 .day-weather {
   display: flex;
   align-items: center;
@@ -90,6 +99,8 @@ view {
   align-items: center;
   margin-top: 40rpx;
   margin-bottom: 40rpx;
+  color: #b9b9d8;
+  /* background: #2e2e46; */
 }
 
 .timetips-icon {
@@ -114,15 +125,17 @@ view {
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  width: 180rpx;
+  width: 240rpx;
 }
 
 .forecast-time {
+  color: #00d4f0;
   font-size: 36rpx;
   line-height: 42rpx;
 }
 
 .forecast-weather {
+  color:rgba(255,255,255,0.8);
   margin-top: 50rpx;
   margin-bottom: 50rpx;
   font-size: 36rpx;
@@ -132,5 +145,9 @@ view {
 .forecast-temp {
   font-size: 30rpx;
   line-height: 42rpx;
-  color: rgba(0, 0, 0, 0.5)
+  color:rgba(255,255,255,0.8);
+}
+
+page {
+  background: #161a42;
 }
